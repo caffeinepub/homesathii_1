@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* HomeSathii Blue/Teal primary: #1F6F8B → oklch(0.51 0.09 218) */
+    --primary: 0.51 0.09 218;
+    --primary-foreground: 0.99 0 0;
+
+    /* Green secondary: #2DBE60 → oklch(0.70 0.17 150) */
+    --secondary: 0.7 0.17 150;
+    --secondary-foreground: 0.99 0 0;
+
+    /* Background white */
+    --background: 0.99 0 0;
+    --foreground: 0.18 0.01 255;
+
+    /* Card light bg: #F6F9FC → oklch(0.98 0.01 240) */
+    --card: 0.98 0.01 240;
+    --card-foreground: 0.18 0.01 255;
+
+    --popover: 0.99 0 0;
+    --popover-foreground: 0.18 0.01 255;
+
+    --muted: 0.95 0.01 240;
+    --muted-foreground: 0.54 0.02 260;
+
+    --accent: 0.92 0.03 218;
+    --accent-foreground: 0.51 0.09 218;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border: #E8EEF3 → oklch(0.94 0.01 240) */
+    --border: 0.94 0.01 240;
+    --input: 0.94 0.01 240;
+    --ring: 0.51 0.09 218;
+
+    /* Chart colors */
+    --chart-1: 0.51 0.09 218;
+    --chart-2: 0.7 0.17 150;
+    --chart-3: 0.24 0.07 237;
+    --chart-4: 0.83 0.16 85;
+    --chart-5: 0.59 0.1 215;
+
+    --sidebar: 0.99 0 0;
+    --sidebar-foreground: 0.18 0.01 255;
+    --sidebar-primary: 0.51 0.09 218;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.92 0.03 218;
+    --sidebar-accent-foreground: 0.51 0.09 218;
+    --sidebar-border: 0.94 0.01 240;
+    --sidebar-ring: 0.51 0.09 218;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.51 0.09 218) 0%,
+      oklch(0.59 0.1 215) 50%,
+      oklch(0.45 0.09 240) 100%
+    );
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(31, 111, 139, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(
+      135deg,
+      oklch(0.51 0.09 218) 0%,
+      oklch(0.59 0.1 215) 100%
+    );
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+}
